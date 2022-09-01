@@ -24,20 +24,22 @@
             </form>
             @foreach ($list as $todolist)
                 <div class="input-group">
-<div class="input-with-icon">
-    <input type="text " id="todo-{{ $todolist->id }}" value="{{ $todolist->description }}"
-    class="form-control" aria-describedby="basic-addon2" disabled>
-    <div class="icons-container">
-        <a href="#" onclick="edit(this,{{ $todolist->id }})"> <i class="fa-solid fa-pencil text-black" ></i></a>
-        {{-- <form id="form" action="{{ route('list.destroy', $todolist->id) }}"
+                    <div class="input-with-icon">
+                        <input type="text " id="todo-{{ $todolist->id }}" value="{{ $todolist->description }}"
+                            class="form-control" aria-describedby="basic-addon2" disabled>
+                        <div class="icons-container">
+                            <a href="#" onclick="edit(this,{{ $todolist->id }})"> <i
+                                    class="fa-solid fa-pencil text-black"></i></a>
+                            {{-- <form id="form" action="{{ route('list.destroy', $todolist->id) }}"
             method="POST">
             @csrf
             @method('DELETE')
             {{ method_field('DELETE') }} --}}
-            <a href="#"><i class="fa-solid fa-trash text-black" onclick="destroy({{ $todolist->id }})"></i> </a>
-        {{-- </form> --}}
-    </div>
-</div>
+                            <a href="#"><i class="fa-solid fa-trash text-black"
+                                    onclick="destroy({{ $todolist->id }})"></i> </a>
+                            {{-- </form> --}}
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -78,7 +80,8 @@
                             data: {
                                 '_token': "{{ csrf_token() }}",
                                 '_method': "PATCH",
-                                'todo': $(`#todo-${id}`).val(), //getting input value from todo list input field
+                                'todo': $(`#todo-${id}`)
+                            .val(), //getting input value from todo list input field
                             },
                             success: function(result) {
                                 Swal.fire(
