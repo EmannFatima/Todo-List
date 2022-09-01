@@ -1,0 +1,26 @@
+.input-with-icon .icons-container i{
+    color: black;
+}
+.input-with-icon .icons-container {
+    background-color: rgb(233, 236, 239);
+    border: 1px solid rgb(206, 212, 218);
+    user-select: auto;
+    border-left: 0;
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.input-with-icon input {
+    border-right: 0 !important;
+    border-radius: 0.375rem 0 0 0.375rem;
+
+}
+
+.input-with-icon {
+    display: flex;
+    width: 100%;
+}
+.icons-container
+{
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+}
